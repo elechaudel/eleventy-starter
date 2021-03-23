@@ -1,0 +1,18 @@
+// Globals
+@import "globals/reset";
+@import "globals/colors";
+@import "globals/typography";
+@import "globals/spacing";
+
+// Helpers
+@import "helpers/functions.scss";
+@import "helpers/mixins.scss";
+
+// Utils
+
+// Components
+@import "components/cookie-banner";
+@import "components/footer";
+
+//Bootstrap
+@import "globals/bootstrap-import";

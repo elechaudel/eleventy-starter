@@ -1,0 +1,11 @@
+<script>
+    if (localStorage.getItem('cookieSeenCmdncmds') != 'shown') {
+        $('.banner--cookie')
+            .delay(2000)
+            .fadeIn();
+    }
+    $('.js-close').click(function (e) {
+        $('.banner--cookie').fadeOut();
+        localStorage.setItem('cookieSeenCmdncmds', 'shown')
+    });
+</script>

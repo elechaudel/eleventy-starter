@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- BASE URL -->
+        <base href="{{ globals.baseUrl }}">
+
+        <!-- TAGMANAGER -->
+        {% include "../_assets/tagmanager-head.njk"%}
+
+        <!-- FAVICON -->
+        {% include "../_assets/favicon.njk" %}
+
+        <!-- SOCIAL META -->
+        <meta property="og:title" content="{% if title %} {{ title }} {% endif %}">
+        <meta property="og:description" content="{% if description %} {{ description }} {% endif %}">
+        <meta property="og:image" content="{{ globals.url }}/media/branding/ogimage-main.png">
+        <meta property="og:url" content="{{ globals.url }}{{ page.url }}">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <!-- STYLESHEETS -->
+        {% include "../_assets/stylesheets.njk" %}
+
+        <!-- INDEXATION -->
+	    {% if noIndex %}<meta name="robots" content="noindex" />{% endif %}
+
+        <title>{{ title }} | {{ globals.siteName }}</title>
+        <meta name="description" content="{% if description %}{{ description }}{% endif %}">
+    </head>
+    <body>
+        <div class="container">
+            <!-- START NAVIGATION -->
+            {% include "../_partials/navigation.njk" %}
+            <!-- END NAVIGATION -->
+            <main>
+                {{ content | safe }}
+            </main>
+            <!-- START FOOTER -->
+            {% include "../_partials/footer.njk" %}
+            <!-- END FOOTER -->
+            {% include "../_partials/cookie-banner.njk" %}
+        </div>
+    
+    <!-- TAGMANAGER -->
+    {% include "../_assets/tagmanager-body.njk"%}
+    </body>
+
+    <!-- SCRIPTS -->
+    {% include "../_assets/scripts.njk" %}
+
+    <!-- COOKIE BANNER SCRIPT -->
+	{% include "../_assets/cookies.njk"%}
+</html>

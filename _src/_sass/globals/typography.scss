@@ -1,0 +1,61 @@
+// Fluid Typography setup
+@import "../helpers/mixins";
+@import "../helpers/functions";
+@import "bootstrap-import";
+
+// Install your font-face
+
+/* @font-face {
+    font-family: "Karrik";
+    src: url(../fonts/font-regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+} */
+
+// Global font style
+
+* {
+    color: $primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    // Replace with your font-face
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+}
+
+// Fluid constraints
+
+$min_width: 320px;
+$max_width: 1200px;
+
+h1,
+.h1 {
+    @include font-style(40px, 64px, 1.1);
+}
+
+h2,
+.h2 {
+    @include font-style(32px, 56px, 1.1);
+}
+
+h3,
+.h3 {
+    @include font-style(24px, 48px, 1.1);
+}
+
+h4,
+.h4 {
+    @include font-style(16px, 32px, 1.1);
+}
+
+p,
+.paragraph {
+    @include font-style(20px, 20px, 1.3);
+
+    &--big {
+        @include font-style(22px, 22px, 1.3)
+    }
+}

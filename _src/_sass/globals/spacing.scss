@@ -1,0 +1,19 @@
+// Override Bootstrap Spacers
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    8: ($spacer * .5),      // 8px
+    16: ($spacer * 1),      // 16px
+    24: ($spacer * 1.5),    // 24px
+    32: ($spacer * 2),      // 32px
+    40: ($spacer * 2.5),    // 40px
+    64: ($spacer * 4),      // 64px
+    80: ($spacer * 5),      // 80px
+    128: ($spacer * 8),     // 128px
+    160: ($spacer * 10)     // 160px
+  ),
+  $spacers
+);
