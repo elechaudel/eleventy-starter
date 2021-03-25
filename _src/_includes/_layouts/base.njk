@@ -24,32 +24,30 @@
         {% include "../_assets/stylesheets.njk" %}
 
         <!-- INDEXATION -->
-	    {% if noIndex %}<meta name="robots" content="noindex" />{% endif %}
+        {% if noIndex %}<meta name="robots" content="noindex"/>{% endif %}
 
         <title>{{ title }} | {{ globals.siteName }}</title>
         <meta name="description" content="{% if description %}{{ description }}{% endif %}">
     </head>
     <body>
-        <div class="container">
-            <!-- START NAVIGATION -->
-            {% include "../_partials/navigation.njk" %}
-            <!-- END NAVIGATION -->
-            <main>
-                {{ content | safe }}
-            </main>
-            <!-- START FOOTER -->
-            {% include "../_partials/footer.njk" %}
-            <!-- END FOOTER -->
-            {% include "../_partials/cookie-banner.njk" %}
-        </div>
-    
-    <!-- TAGMANAGER -->
-    {% include "../_assets/tagmanager-body.njk"%}
+        <!-- START NAVIGATION -->
+        {% include "../_partials/navigation.njk" %}
+        <!-- END NAVIGATION -->
+        <main>
+            {{ content | safe }}
+        </main>
+        <!-- START FOOTER -->
+        {% include "../_partials/footer.njk" %}
+        <!-- END FOOTER -->
+        {% include "../_partials/cookie-banner.njk" %}
+
+        <!-- TAGMANAGER -->
+        {% include "../_assets/tagmanager-body.njk"%}
     </body>
 
     <!-- SCRIPTS -->
     {% include "../_assets/scripts.njk" %}
 
     <!-- COOKIE BANNER SCRIPT -->
-	{% include "../_assets/cookies.njk"%}
+    {% include "../_assets/cookies.njk"%}
 </html>

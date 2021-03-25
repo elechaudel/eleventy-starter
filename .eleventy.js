@@ -1,3 +1,5 @@
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
 module.exports = function(eleventyConfig) {
     
     eleventyConfig.addWatchTarget("./_src/_sass/");
@@ -15,6 +17,9 @@ module.exports = function(eleventyConfig) {
 		linkify: true
 	});
 	eleventyConfig.addNunjucksFilter("markdownify", markdownString => md.render(markdownString));
+
+    // Eleventy navigation
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     return {
         dir: {
